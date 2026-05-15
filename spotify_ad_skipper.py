@@ -98,6 +98,8 @@ def main() -> None:
                     elapsed = time.monotonic() - t0
 
                     if launched:
+                        while not spotify_state() in ("paused", "playing", "stopped"):
+                           time.sleep(0.3)
                         press_play()
                         print(f" Resumed in {elapsed:.2f}s\n")
                     else:
