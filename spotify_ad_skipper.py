@@ -55,7 +55,7 @@ def quit_spotify() -> None:
 
 
 def launch_spotify() -> bool:
-    subprocess.Popen(["open", "-a", "Spotify"],
+    subprocess.Popen(["open", "-gj", "Spotify"],
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     deadline = time.monotonic() + SPOTIFY_LAUNCH_TIMEOUT
@@ -77,7 +77,7 @@ def main() -> None:
     print("Spotify Ad Skipper 🎵 — running (Ctrl+C to stop)\n")
 
     skipped = 0
-    handling_ad = False  # Debounce flag — don't re-trigger mid-restart
+    handling_ad = False 
 
     while True:
         try:
@@ -102,7 +102,7 @@ def main() -> None:
                         print(f" Resumed in {elapsed:.2f}s\n")
                     else:
                         print(" Spotify took too long to relaunch — retrying...")
-                        handling_ad = False  # Allow retry
+                        handling_ad = False  
 
                 time.sleep(AD_POLL_INTERVAL)
                 continue
