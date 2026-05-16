@@ -15,7 +15,7 @@ import subprocess
 import time
 import sys
 
-POLL_INTERVAL = 0.8       # Seconds between checks while music is playing
+POLL_INTERVAL = 0.2     # Seconds between checks while music is playing
 AD_POLL_INTERVAL = 0.3    # Faster polling once we're in an ad cycle
 SPOTIFY_LAUNCH_TIMEOUT = 8  # Max seconds to wait for Spotify to launch
 
@@ -55,7 +55,7 @@ def quit_spotify() -> None:
 
 
 def launch_spotify() -> bool:
-    subprocess.Popen(["open", "-gj", "Spotify"],
+    subprocess.Popen(["open", "-g", "-a", "Spotify"],
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     deadline = time.monotonic() + SPOTIFY_LAUNCH_TIMEOUT
