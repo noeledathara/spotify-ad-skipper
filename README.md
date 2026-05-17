@@ -2,6 +2,8 @@
 A very light macOS tool that automatically skips Spotify ads by detecting when one plays, instantly quitting and relaunching Spotify, then playign your music.
 
 ---
+### 
+Do NOT use Spotify in Split Screen for this program to work
 
 ## How it works
 Spotify's ad track IDs always start with `spotify:ad:`. The script polls Spotify every ~0.8 seconds via AppleScript. The moment an ad is detected, it:
@@ -48,6 +50,7 @@ That's it. It will open Spotify and start skipping ads automatically.
 - This tool automates what you'd do manually (quitting and reopening Spotify to skip ads)
 - It does not modify any Spotify files
 - Consider supporting artists by upgrading to Spotify Premium
+Do NOT use Spotify in Split Screen for this program to work
 
 ---
 
